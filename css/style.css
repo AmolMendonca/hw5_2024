@@ -1,0 +1,194 @@
+@keyframes SlickLogo {
+    from {
+      width: 25px;
+      opacity: 0;
+    }
+    to {
+      width: 475px;
+      opacity: 1;
+    }
+    /* kickstart the logo with some style */
+}
+  
+#logo {
+    animation: SlickLogo 5s ease-out forwards;
+    display: block; /* ensures logo is a block-level element */
+    /* makes the logo come alive */
+}
+
+body {
+    font-family: 'Poppins', serif;
+    background-image: url('images/concrete_seamless.png'), none;
+    background-color: #f1f1f1;
+    color: #333; /* setting up the stage for content */
+    /* default text color for better readability */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* adds some space inside the header */
+    /* positioning elements within header neatly */
+}
+
+.nav_links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: -1rem; /* adjusts spacing for the last nav item */
+    /* spread out those nav links */
+}
+
+.nav_links a:link, .nav_links a:visited {
+    color: #45adad;
+    padding: 0.5rem; /* padding for better link tap area */
+    /* keep the links teal always, nice and consistent */
+}
+  
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* card headers get a touch of style */
+}
+  
+.card > header:first-child {
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* fixing that pesky first-child issue with radii */
+}
+
+.card {
+    border-radius: 50px 50px 0 0;
+    flex-direction: column;
+    flex-basis: 450px;
+    overflow: hidden; /* prevents content from spilling out */
+    /* cards are like business cards, but better */
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px; /* limits the width of the pricing section */
+    margin: auto; /* centers the pricing section */
+    /* where the magic happens for pricing */
+}
+
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+    transition: transform 0.3s ease; /* smooth transition for scaling images */
+    /* gallery images framed nicely */
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* scales up image on hover */
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* gallery gets a flex layout too */
+}
+
+@media (min-width: 900px) {
+    header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      /* larger screens get a different header layout */
+    }
+  
+    .nav_links {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      /* navigation tucks to the side on wide screens */
+    }
+  
+    .pricing {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      box-sizing: border-box;
+      /* adjust the spacing for our pricing cards */
+    }
+  
+    .card {
+      flex-basis: 275px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* adds subtle shadow to cards */
+      /* more cards in a row on wider screens */
+    }
+  
+    main {
+        padding-top: 60px;
+        /* don't forget to push the main content down under the header */
+    }
+    
+    body > header {
+      position: sticky;
+      top: 0;
+      /* sticky header to keep our nav accessible */
+    }
+}
+
+@media print and (orientation: portrait) {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+        /* print doesn't do backgrounds well */
+    }
+    
+    .nav_links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* tidy up nav links for print */
+    }
+
+    nav {
+        width: 100%;
+        /* full width nav in print */
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        /* line up those pricing cards */
+    }
+
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+        padding: 0; /* removes padding for a cleaner print layout */
+        /* cards stand out with a border in print */
+    }
+    
+    .gallery {
+        display: none;
+        /* hide the gallery for print, it's just clutter */
+    }
+    
+    #gallery {
+        display: none;
+        /* double down on hiding the gallery */
+    }
+    
+    .card li:nth-child(2)::after {
+        content:"\1F44D";
+        font-size: 1.5rem; /* increases the size of the thumbs up icon */
+        /* thumbs up for good measure */
+    }
+}    
